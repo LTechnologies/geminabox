@@ -1,14 +1,11 @@
 <p>
-<small>If you did not need any credentials to get to this page</small>
+  <!--<small>If you did not need any credentials to get to this page</small>-->
   <pre><code>gem sources -a <%= url "/" %></code></pre>
-<small>If you needed some credentials to get to this page</small>
-  <pre><code>gem sources -a <%= url.to_s.gsub('://','://username:password@') %></code></pre>
-<small>and then ...</small>
-  <pre><code>gem install geminabox<br />gem inabox [gemfile]</code></pre>
+  <!--<small>If you needed some credentials to get to this page</small>-->
+  <!--<pre><code>gem sources -a <%#= url.to_s.gsub('://','://username:password@') %></code></pre>-->
 </p>
 
 <% if @gems.any? %>
-  <a href="<%= url("/upload") %>">Upload Another Gem</a>
 
   <div id="alpha_index"><%= ("a".."z").map{|i| @index_gems.include?(i) ? "<a href='#jump_#{i}'>#{i}</a>" : i }.join(" - ") %></div>
 
@@ -53,4 +50,4 @@
   </ul>
 <% end %>
 
-<a href="<%= url("/upload") %>">Upload Another Gem</a>
+<a href="<%= url("/upload") %>">Upload Ruby Gem</a>
